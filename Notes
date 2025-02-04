@@ -1,0 +1,70 @@
+Framework:-
+   - framework is a platform for developing software applications.
+   It already have predefined classes functions that can be used to process input,
+   manage hardware devices and interact with System softwares.
+
+---------------------------------
+
+Django:-
+    -  Django is an extremely popular and fully featured server-side web framework, written in Python.
+    It provides a set of tools and functionalities that solves many problems associated with web
+    development such as user sign up, Authorization ,Database Access security features, template design,
+    URL Mapping and much more. Django helps us to develop secure and reliable web application in
+    quick and standardized way without having to reinvent the wheel.
+
+----------------------------------
+
+Django installation:-
+    open terminal -> cmd -> type "pip install django"
+
+-----------------------------------
+
+Project Creation:-
+    - In Django, a "project" is a collection of configurations and applications that together
+    make up a web application or a website.
+
+    Command :- "django-admin startproject 'project_name' "
+
+-------------------------------------
+
+Change dir:
+    command: " cd 'dir_name' "
+
+-------------------------------------
+
+App Creation:
+    - App is a Web application that does something. An app usually is composed of a set of models
+    (database tables), views, templates, tests.
+
+    Command :- " python manage.py startapp 'app_name' "
+
+--------------------------------------
+
+App Confiq:
+    Open sub project -> settings.py -> INSTALLED_APPS ['add_app_name']
+
+--------------------------------------
+
+Run Command:-  " python manage.py runserver "
+
+--------------------------------------
+
+DJANGO MVC - MVT Pattern:
+    The Model-View-Template (MVT) is slightly different from MVC. In fact the
+    main difference between the two patterns is that Django itself takes care
+    of the Controller part (Software Code that controls the interactions
+    between the Model and View), leaving us with the template. The template
+    is a HTML file mixed with Django Template Language (DTL).
+
+    Model: Handles data access, manipulation, and validation.
+    View: Processes requests, retrieves data from models, and sends data to templates for rendering.
+    Template: Renders HTML with dynamic content using data provided by views.
+
+---------------------------------------------
+
+Template:-
+    - In Django, templates are HTML files that allow you to add dynamic content to your website.
+    They help separate the design (HTML) from the logic (Python code).
+
+    Configuration:  Project -> Settings -> Template (list) -> DIRS : [os.path.join(BASE_DIR, 'Template')]
+
