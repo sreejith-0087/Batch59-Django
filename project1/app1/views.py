@@ -18,3 +18,6 @@ def IntegerFun(request, age):
 def Base(request):
     return render(request, '1.Base.html')
 
+def Static_file(request):
+    return render(request, '2.Static_file.html')
+

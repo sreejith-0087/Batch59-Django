@@ -7,4 +7,5 @@ urlpatterns = [
     path('username/<str:name>/', StringFun, name='username'),
     path('user_age/<int:age>/', IntegerFun, name='user_age'),
     path('base/', Base, name='base'),
+    path('', Static_file, name='static_file'),
 ]
