@@ -21,3 +21,12 @@ def Base(request):
 def Static_file(request):
     return render(request, '2.Static_file.html')
 
+def Page_Redirection_Home(request):
+    return render(request, '3.Page_Redirection(Home).html')
+
+def Page_Redirection_About(request):
+    return render(request, '4.Page_Redirection(About).html')
+
+def Page_Redirection_Contact(request):
+    return render(request, '5.Page_Redirection(Contact).html')
+
