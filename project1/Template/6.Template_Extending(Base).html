@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact</title>
+    <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
 
@@ -12,7 +12,9 @@
     <a href="{% url 'contact' %}">Contact</a>
 </nav>
 
+{% block content %}
 
-<h2>Contact Page..</h2>
+{% endblock %}
+
 </body>
 </html>
