@@ -11,7 +11,7 @@ urlpatterns = [
     path('home/', Page_Redirection_Home, name='home'),
     path('about/', Page_Redirection_About, name='about'),
     path('contact/', Page_Redirection_Contact, name='contact'),
-    path('', Template_Extending_Home, name='thome'),
+    path('thome/', Template_Extending_Home, name='thome'),
     path('tabout/', Template_Extending_About, name='tabout'),
     path('tcontact/', Template_Extending_Contact, name='tcontact'),
 ]

@@ -78,3 +78,26 @@ Static:-
                     STATICFILES_DIRS = [STATIC_DIR,]
 
 --------------------------------------------
+
+Models:-
+    - A model is a class that represents table or collection in our DB, and
+      where every attribute of the class is a field of the table or collection.
+
+    Migration Command:
+        - python manage.py makemigrations
+        - python manage.py migrate
+
+-----------------------------------------------
+
+Admin Panal:-
+    Command for Admin Creation:
+        - python manage.py createsuperuser
+
+        username: 'Enter the username' eg:python
+        email :  skip
+        password: ******
+        re-password: *****
+
+        then run,
+
+--------------------------------------------------
