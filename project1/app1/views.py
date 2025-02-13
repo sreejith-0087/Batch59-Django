@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Details
 # Create your views here.
 
 
@@ -38,3 +39,7 @@ def Template_Extending_Contact(request):
 
 def Template_Extending_About(request):
     return render(request, '8.Template_Extending(About).html')
+
+def DataToHtml(request):
+    user = Details.objects.all()
+    return render(request, '10.DataToHtml.html', {'Users':user})

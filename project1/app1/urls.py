@@ -14,4 +14,5 @@ urlpatterns = [
     path('thome/', Template_Extending_Home, name='thome'),
     path('tabout/', Template_Extending_About, name='tabout'),
     path('tcontact/', Template_Extending_Contact, name='tcontact'),
+    path('', DataToHtml, name='datatohtml'),
 ]
