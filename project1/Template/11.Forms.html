@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Datas</title>
+</head>
+<body>
+
+<h2>User Details</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    Name: <input type="text" name="name"> <br>
+    Age: <input type="number" name="age"> <br>
+    Subject: <input type="text" name="subject"> <br>
+    Email: <input type="email" name="email"> <br>
+
+    <input type="submit" value="Data Send to DB">
+</form>
+
+</body>
+</html>

@@ -102,3 +102,9 @@ Admin Panal:-
 
 --------------------------------------------------
 
+Forms:-
+   -  forms.py is a common convention used to store and organize form classes for your web application.
+      Forms in Django are used to handle user input and validate data before it is processed.
+      They are typically defined in a forms.py file within your Django app.
+
+--------------------------------------------------

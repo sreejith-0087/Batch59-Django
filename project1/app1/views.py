@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Details
+from .models import Details, UserModel
+from .forms import UserForm
 # Create your views here.
 
 
@@ -43,3 +44,22 @@ def Template_Extending_About(request):
 def DataToHtml(request):
     user = Details.objects.all()
     return render(request, '10.DataToHtml.html', {'Users':user})
+
+
+def UserDetails(request):
+    if request.method == 'POST':
+        a = UserForm(request.POST)
+
+        if a.is_valid():
+            nm = a.cleaned_data['name']
+            ag = a.cleaned_data['age']
+            sub = a.cleaned_data['subject']
+            em = a.cleaned_data['email']
+
+            b = UserModel(Name=nm, Age=ag, Subject=sub, Email=em)
+            b.save()
+
+            return HttpResponse('Completed!')
+        else:
+            return HttpResponse('Failed..')
+    return render(request, '11.Forms.html')
