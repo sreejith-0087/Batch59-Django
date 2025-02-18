@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="{% static 'css/profilecard.css' %}">
+</head>
+<body>
+
+{% for i in profile %}
+<div class="profile-card">
+    <div class="profile-header">
+        <h2>{{i.Name}}</h2>
+    </div>
+    <div class="profile-details">
+        <p><strong>Address: </strong>{{i.Address}}</p>
+        <p><strong>Email: </strong>{{i.Email}}</p>
+        <p><strong>Phone: </strong>{{i.Phone}}</p>
+    </div>
+</div>
+{% endfor %}
+
+<p><a href="{% url 'userinfo' %}">Create Profile</a></p>
+
+</body>
+</html>
+

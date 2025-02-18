@@ -20,3 +20,24 @@ class UserModel(models.Model):
 
     def __str__(self):
         return self.Name
+
+
+class InfoModel(models.Model):
+    Name = models.CharField(max_length=30)
+    Email = models.EmailField()
+    Address = models.CharField(max_length=40)
+    Phone = models.IntegerField()
+
+    def __str__(self):
+        return self.Name
+
+
+class RegisterModel(models.Model):
+    Name = models.CharField(max_length=30)
+    Phone = models.IntegerField()
+    Email = models.EmailField()
+    Password = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.Name
+
