@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146d2577-53b5-4988-bf1a-b7bc552398a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project1/Static/css/profilecard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/12.Info.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/13.Profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/14.Register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/15.Login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/Template/16.Auth_Base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/Template/17.Auth_Register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/Template/18.Auth_Login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notes" beforeDir="false" afterPath="$PROJECT_DIR$/Notes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/app1/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/app1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project1/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project1/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

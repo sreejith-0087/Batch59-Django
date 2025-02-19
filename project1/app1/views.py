@@ -1,5 +1,10 @@
+from idlelib.rpc import request_queue
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.models import User
+from django.contrib import messages, auth
+from django.contrib.auth import logout
 from .models import *
 from .forms import *
 # Create your views here.
@@ -129,3 +134,49 @@ def Login(request):
             return HttpResponse('Invalid Inputs')
 
     return render(request, '15.Login.html')
+
+
+def Auth_Base(request):
+    return render(request, '16.Auth_Base.html')
+
+
+def Auth_Register(request):
+    if request.method == 'POST':
+        f_name = request.POST['Name']
+        email = request.POST['Email']
+        password = request.POST['Password']
+        re_password = request.POST['Re-Password']
+
+        if password == re_password:
+            if User.objects.filter(email=email).exists():
+                messages.error(request, 'Email Already Exist!')
+            else:
+                user = User.objects.create_user(username=email, first_name=f_name, email=email, password=password)
+                user.save()
+                messages.success(request, 'Registration Complate')
+                return redirect('/auth_login')
+        else:
+            messages.error(request, 'Password does not match')
+
+    return render(request, '17.Auth_Register.html')
+
+
+def Auth_Login(request):
+    if request.method == 'POST':
+        email = request.POST['Email']
+        password = request.POST['Password']
+
+        user = auth.authenticate(username=email, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'Login Complete')
+            return redirect('/')
+        else:
+            messages.error(request, 'Invalid')
+    return render(request, '18.Auth_Login.html')
+
+
+def Auth_Logout(request):
+    logout(request)
+    return redirect('/')

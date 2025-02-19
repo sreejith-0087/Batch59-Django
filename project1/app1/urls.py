@@ -20,6 +20,10 @@ urlpatterns = [
     path('userdata/', UserDetails, name='userdata'),
     path('userinfo/', Info, name='userinfo'),
     path('profilecard/', ProfileCard, name='profilecard'),
-    path('', Register, name='register'),
+    path('register/', Register, name='register'),
     path('login/', Login, name='login'),
+    path('', Auth_Base, name='home'),
+    path('auth_register/', Auth_Register, name='auth_reg'),
+    path('auth_login/', Auth_Login, name='auth_login'),
+    path('auth_logout/', Auth_Logout, name='auth_logout'),
 ]
