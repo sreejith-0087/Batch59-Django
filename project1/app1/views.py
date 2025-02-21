@@ -180,3 +180,24 @@ def Auth_Login(request):
 def Auth_Logout(request):
     logout(request)
     return redirect('/')
+
+
+def FileUpload(request):
+    if request.method == 'POST':
+        fileup = FileForm(request.POST, request.FILES)
+
+        if fileup.is_valid():
+            nme = fileup.cleaned_data['File_Name']
+            file = fileup.cleaned_data['File']
+
+            FileModel(FileName=nme, File=file).save()
+
+            return redirect('/display')
+        else:
+            return HttpResponse('Failed')
+    return render(request, '19.File_Uploading.html')
+
+
+def Display_Uploaded_File(request):
+    dis = FileModel.objects.all()
+    return render(request, '20.Display_Uploaded_File.html', {'dis': dis})

@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="146d2577-53b5-4988-bf1a-b7bc552398a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project1/Template/16.Auth_Base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/17.Auth_Register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project1/Template/18.Auth_Login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/Template/19.File_Uploading.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project1/Template/20.Display_Uploaded_File.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/Template/16.Auth_Base.html" beforeDir="false" afterPath="$PROJECT_DIR$/project1/Template/16.Auth_Base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/app1/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/app1/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/app1/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/app1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project1/app1/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/app1/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/project1/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/project1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/project1/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project1/project1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project1/project1/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +61,7 @@
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
@@ -66,7 +73,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-6a3326d57233-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.24807.21" />
+        <option value="bundled-python-sdk-fc1d50d2d915-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.24978.54" />
       </set>
     </attachedChunks>
   </component>

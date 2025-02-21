@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+</head>
+<body>
+
+<h2>File Upload - </h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>File Name:</label>
+    <input type="text" name="File_Name"> <br><br>
+
+    <label>File:</label>
+    <input type="file" name="File"> <br><br>
+
+    <input type="submit" value="Upload">
+</form>
+
+</body>
+</html>
+

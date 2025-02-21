@@ -41,3 +41,10 @@ class RegisterModel(models.Model):
     def __str__(self):
         return self.Name
 
+
+class FileModel(models.Model):
+    FileName = models.CharField(max_length=50)
+    File = models.ImageField()
+
+    def __str__(self):
+        return self.FileName

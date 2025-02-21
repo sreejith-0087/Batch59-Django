@@ -25,3 +25,6 @@ class LoginForm(forms.Form):
     Email = forms.EmailField()
     Password = forms.CharField(max_length=25)
 
+class FileForm(forms.Form):
+    File_Name = forms.CharField(max_length=50)
+    File = forms.ImageField()
