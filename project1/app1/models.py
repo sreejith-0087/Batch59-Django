@@ -48,3 +48,27 @@ class FileModel(models.Model):
 
     def __str__(self):
         return self.FileName
+
+
+class Author(models.Model):
+    Name = models.CharField(max_length=30)
+    #Other Fields
+    def __str__(self):
+        return self.Name
+
+class Genre(models.Model):
+    genre = models.CharField(max_length=30)
+    # Other Fields
+    def __str__(self):
+        return self.genre
+
+class BookModel(models.Model):
+    Title = models.CharField(max_length=50)
+    Author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    Genre = models.ManyToManyField(Genre)
+    Published_Date = models.DateField()
+    Image = models.ImageField(upload_to='Books/', null=True, blank=True)
+
+    def __str__(self):
+        return self.Title
+

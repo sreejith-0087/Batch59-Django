@@ -1,5 +1,5 @@
 from django import forms
-
+from .models import BookModel
 
 class UserForm(forms.Form):
     name = forms.CharField(max_length=30)
@@ -28,3 +28,10 @@ class LoginForm(forms.Form):
 class FileForm(forms.Form):
     File_Name = forms.CharField(max_length=50)
     File = forms.ImageField()
+
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = BookModel
+        fields = ['Title', 'Author', 'Genre', 'Published_Date', 'Image']
+

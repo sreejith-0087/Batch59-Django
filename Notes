@@ -109,4 +109,12 @@ Forms:-
 
 --------------------------------------------------
 
+Table Linking:-
+    - In Django table linking refers to establishing relationships between models, and there are three
+    main types of relationships:
+        1.OneToOneField
+        2.ForeignKey(OneToMany)
+        3.ManyToManyField
+    These relationships define how data in one table(model) relates to data in another table(model).
 
+--------------------------------------------------

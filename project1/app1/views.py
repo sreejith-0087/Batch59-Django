@@ -1,5 +1,3 @@
-from idlelib.rpc import request_queue
-
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
@@ -201,3 +199,37 @@ def FileUpload(request):
 def Display_Uploaded_File(request):
     dis = FileModel.objects.all()
     return render(request, '20.Display_Uploaded_File.html', {'dis': dis})
+
+
+def Book_List(request):
+    book = BookModel.objects.all()
+    return render(request, '21.Book_List.html', {'books': book})
+
+
+def Add_Book(request):
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = BookForm()
+    return render(request, '22.Add_Book.html', {'form':form})
+
+
+def Edit_Book(request, pk):
+    book = BookModel.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = BookForm(request.POST, request.FILES, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = BookForm(instance=book)
+    return render(request, '22.Add_Book.html', {'form':form, 'book':book})
+
+
+def Delete_Book(request, pk):
+    book = BookModel.objects.get(pk=pk)
+    book.delete()
+    return redirect('/')

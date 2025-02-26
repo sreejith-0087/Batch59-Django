@@ -21,5 +21,8 @@ class InfoAdmin(admin.ModelAdmin):
     search_fields = ['Name', 'Email', 'Address', 'Phone']
 
 
+admin.site.register(Author)
 
+admin.site.register(BookModel)
 
+admin.site.register(Genre)

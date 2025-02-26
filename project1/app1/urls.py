@@ -26,7 +26,11 @@ urlpatterns = [
     path('auth_register/', Auth_Register, name='auth_reg'),
     path('auth_login/', Auth_Login, name='auth_login'),
     path('auth_logout/', Auth_Logout, name='auth_logout'),
-    path('', FileUpload, name='file_upload'),
+    path('file_upload/', FileUpload, name='file_upload'),
     path('display/', Display_Uploaded_File, name='display'),
+    path('', Book_List, name='book_list'),
+    path('add_book/', Add_Book, name='add_book'),
+    path('edit/<int:pk>', Edit_Book, name='edit_book'),
+    path('delete/<int:pk>', Delete_Book, name='delete_book'),
 ]
 
