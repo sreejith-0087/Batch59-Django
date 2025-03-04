@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages, auth
 from django.contrib.auth import logout
+from django.db.models import Q
+from django.core.paginator import Paginator
+from django.core.mail import send_mail, EmailMessage
 from .models import *
 from .forms import *
 # Create your views here.
@@ -203,7 +206,10 @@ def Display_Uploaded_File(request):
 
 def Book_List(request):
     book = BookModel.objects.all()
-    return render(request, '21.Book_List.html', {'books': book})
+    paginator = Paginator(book, 4)
+    page_number = request.GET.get('page')
+    books = paginator.get_page(page_number)
+    return render(request, '21.Book_List.html', {'books': books})
 
 
 def Add_Book(request):
@@ -233,3 +239,57 @@ def Delete_Book(request, pk):
     book = BookModel.objects.get(pk=pk)
     book.delete()
     return redirect('/')
+
+
+def Product_Search(request):
+    query = request.GET.get('q')
+    if query:
+        result = BookModel.objects.all().filter(Q(Title__icontains=query)|Q(Author__Name__icontains=query)
+                                                |Q(Genre__genre__icontains=query))
+    else:
+        result = []
+    return render(request, '21.Book_List.html', {'books':result})
+
+
+def Email_Send(request):
+    if request.method == 'POST':
+        to = request.POST.get('to')
+        sub = request.POST.get('subject')
+        msg = request.POST.get('msg')
+
+        if to and sub and msg:
+            r = send_mail(sub, msg, 'sreejith.techwingsys@gmail.com', [to])
+            if r == 1:
+                res = f'Email to {to}'
+            else:
+                res = 'Failed to send mail'
+        else:
+            res = 'Incomplete Form data'
+        return render(request, '23.Email_Send.html', {'msg':res})
+    elif request.method == 'GET':
+        return render(request, '23.Email_Send.html', {'msg':''})
+
+    else:
+        return HttpResponse('Method not allowed', status=405)
+
+
+def Email_Attach(request):
+    if request.method == 'POST':
+        form = MailForm(request.POST, request.FILES)
+        if form.is_valid():
+            email_to = form.cleaned_data['email_to']
+            sub = form.cleaned_data['sub']
+            msg = form.cleaned_data['msg']
+            attach = request.FILES.get('attach')
+
+            email = EmailMessage(sub, msg, 'sreejith.techwingsys@gmail.com', [email_to])
+            if attach:
+                email.attach(attach.name, attach.read(), attach.content_type)
+            email.send()
+            res = f'Emailed to {email_to}'
+        else:
+            res = 'Failed to send mail'
+    else:
+        form = MailForm()
+        res = None
+    return render(request, '24.Email_Attach.html', {'form':form, 'msg':res})

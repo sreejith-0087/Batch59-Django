@@ -35,3 +35,10 @@ class BookForm(forms.ModelForm):
         model = BookModel
         fields = ['Title', 'Author', 'Genre', 'Published_Date', 'Image']
 
+
+
+class MailForm(forms.Form):
+    email_to = forms.EmailField()
+    sub = forms.CharField(max_length=200, label='Subject', min_length=10)
+    msg = forms.CharField(widget=forms.Textarea, label='Message')
+    attach = forms.FileField()

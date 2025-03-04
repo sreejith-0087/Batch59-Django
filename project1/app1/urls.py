@@ -28,9 +28,11 @@ urlpatterns = [
     path('auth_logout/', Auth_Logout, name='auth_logout'),
     path('file_upload/', FileUpload, name='file_upload'),
     path('display/', Display_Uploaded_File, name='display'),
-    path('', Book_List, name='book_list'),
+    path('book_list/', Book_List, name='book_list'),
     path('add_book/', Add_Book, name='add_book'),
     path('edit/<int:pk>', Edit_Book, name='edit_book'),
     path('delete/<int:pk>', Delete_Book, name='delete_book'),
+    path('search_product/', Product_Search, name='search_product'),
+    path('email_send', Email_Send, name='email_send'),
+    path('', Email_Attach, name='email_attach'),
 ]
-

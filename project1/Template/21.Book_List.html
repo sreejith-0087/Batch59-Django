@@ -14,7 +14,7 @@
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <a href="{% url 'book_list' %}" style="text-decoration-line:none;"><h2 class="navbar-brand">Book Store</h2></a>
-                <form class="d-flex" role="search" action="#" method="get">
+                <form class="d-flex" role="search" action="{% url 'search_product' %}" method="get">
                     <input type="search" class="form-control me-2" placeholder="Search Books" aria-label="Search" name="q">
                     <button type="submit" class="btn btn-outline-success">Search</button>
                 </form>
@@ -51,6 +51,37 @@
         </div>
 
         <a class="btn btn-success" href="{% url 'add_book' %}">Add Book</a>
+
+        <div class="pagination justify-content-center">
+            {% if books.paginator.num_pages > 1 %}
+                <ul class="pagination">
+                    {% if books.has_previous %}
+                       <li class="page-item">
+                           <a class="page-link" href="?page=1"> First</a>
+                       </li>
+                       <li class="page-item">
+                           <a class="page-link" href="?page={{ books.previous_page_number }}">previous</a>
+                       </li>
+                    {% endif %}
+
+                    {% for num in books.paginator.page_range %}
+                         <li class="page-item {% if num == books.number %}active{% endif %}">
+                             <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                         </li>
+                    {% endfor %}
+
+                    {% if books.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ books.next_page_number }}">Next</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ books.paginator.num_pages }}">Last</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+
     </div>
 </div>
 

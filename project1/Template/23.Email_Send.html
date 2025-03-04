@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Handling Django</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+
+    <h3>Email To</h3>
+    <input type="email" name="to" placeholder="To Address">
+
+    <h3>Subject</h3>
+    <input type="text" name="subject" placeholder="Subject">
+
+    <h3>Message</h3>
+    <textarea name="msg" cols="20" rows="5" placeholder="Message"> </textarea>
+
+    <input type="submit" value="Send">
+</form>
+
+<hr>
+
+<h3 style="color:brown;"> {{msg}}</h3>
+
+</body>
+</html>
