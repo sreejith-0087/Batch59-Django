@@ -8,6 +8,11 @@ from django.core.paginator import Paginator
 from django.core.mail import send_mail, EmailMessage
 from .models import *
 from .forms import *
+
+# Class based views
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 # Create your views here.
 
 
@@ -293,3 +298,49 @@ def Email_Attach(request):
         form = MailForm()
         res = None
     return render(request, '24.Email_Attach.html', {'form':form, 'msg':res})
+
+
+def Cookies(request):
+    v = int(request.COOKIES.get('visit', 0))
+    visit = v+1
+    res = render(request, '25.Cookies.html', {'visit':visit})
+    res.set_cookie('visit', visit)
+    return res
+
+
+
+# List all students
+class StudentListView(ListView):
+    model = Student
+    template_name = "Students_Details/student_list.html"
+    context_object_name = "students"
+
+
+# Show Student details
+class StudentDetailView(DetailView):
+    model = Student
+    template_name = "Students_Details/student_detail.html"
+    context_object_name = "student"
+
+
+# Create a new student
+class StudentCreateView(CreateView):
+    model = Student
+    form_class = StudentForm
+    template_name = "Students_Details/student_form.html"
+    success_url = reverse_lazy('student_list')
+
+
+# Update Student Details
+class StudentUpdateView(UpdateView):
+    model = Student
+    form_class = StudentForm
+    template_name = 'Students_Details/student_form.html'
+    success_url = reverse_lazy('student_list')
+
+
+# Delete a student
+class StudentDeleteView(DeleteView):
+    model = Student
+    template_name = "Students_Details/student_confirm_delete.html"
+    success_url = reverse_lazy('student_list')

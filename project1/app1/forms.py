@@ -1,5 +1,5 @@
 from django import forms
-from .models import BookModel
+from .models import BookModel, Student
 
 class UserForm(forms.Form):
     name = forms.CharField(max_length=30)
@@ -42,3 +42,9 @@ class MailForm(forms.Form):
     sub = forms.CharField(max_length=200, label='Subject', min_length=10)
     msg = forms.CharField(widget=forms.Textarea, label='Message')
     attach = forms.FileField()
+
+
+class StudentForm(forms.Form):
+    class Meta:
+        model = Student
+        fields = ['Name', 'Age', 'Subject']

@@ -72,3 +72,12 @@ class BookModel(models.Model):
     def __str__(self):
         return self.Title
 
+
+
+class Student(models.Model):
+    Name = models.CharField(max_length=30)
+    Age = models.IntegerField()
+    Subject = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.Name

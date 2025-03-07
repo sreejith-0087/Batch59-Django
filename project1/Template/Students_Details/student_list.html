@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students Details</title>
+</head>
+<body>
+
+{% for i in students %}
+
+    <p>
+        <a href="{% url 'student_detail' i.pk %}">{{i.Name}}</a>
+        (Age: {{i.Age}} | Subject: {{i.Subject}})
+
+        | <a href="{% url 'student_update' i.pk %}">Edit</a>
+        | <a href="{% url 'student_delete' i.pk %}">Delete</a>
+    </p>
+
+{% endfor %}
+
+<a href="{% url 'student_create' %}">Add New Student</a>
+
+</body>
+</html>
+

@@ -34,5 +34,12 @@ urlpatterns = [
     path('delete/<int:pk>', Delete_Book, name='delete_book'),
     path('search_product/', Product_Search, name='search_product'),
     path('email_send', Email_Send, name='email_send'),
-    path('', Email_Attach, name='email_attach'),
+    path('email_attach/', Email_Attach, name='email_attach'),
+    path('Cookie/', Cookies, name='Cookie'),
+
+    path('', StudentListView.as_view(), name='student_list'),
+    path('student/<int:pk>/', StudentDetailView.as_view(), name='student_detail'),
+    path('student/new/', StudentCreateView.as_view(), name='student_create'),
+    path('student/<int:pk>/edit/', StudentUpdateView.as_view(), name='student_update'),
+    path('student/<int:pk>/delete>', StudentDeleteView.as_view(), name='student_delete')
 ]
