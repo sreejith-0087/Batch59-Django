@@ -44,7 +44,7 @@ class MailForm(forms.Form):
     attach = forms.FileField()
 
 
-class StudentForm(forms.Form):
+class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = ['Name', 'Age', 'Subject']
